@@ -1,0 +1,10 @@
+{
+  "schema": "saengine.packageMirrors/1",
+  "packages": {
+    "saengine-shapes": {
+      "repository": "The-Studio-of-Sadiq/SAEngine",
+      "path": "python/src/saengine/codes/packs/saengine-shapes",
+      "commit": "26ea5d968860033b94e78022b6b7eeaaaac9198c"
+    }
+  }
+}
