@@ -1,0 +1,22 @@
+# Publishes the new package versions on a tag packages-YYYY-MM-DD (an immutable GitHub Release
+# with the zips, previews and packages.json), with the shared workflow of saengine-index.
+# Run it by hand (Actions > Publish packages > Run workflow) for a dry run: the release files
+# are kept as a workflow artifact and nothing is released.
+name: Publish packages
+
+on:
+  push:
+    tags: ["packages-*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    uses: The-Studio-of-Sadiq/saengine-index/.github/workflows/publish-packages.yml@main
+    with:
+      kind: structureTemplate
+      dry-run: ${{ github.event_name == 'workflow_dispatch' }}
+    secrets:
+      index-dispatch-token: ${{ secrets.INDEX_DISPATCH_TOKEN }}

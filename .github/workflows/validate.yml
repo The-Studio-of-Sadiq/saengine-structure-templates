@@ -1,0 +1,17 @@
+# Checks every changed package on a pull request (and all of them on main) with the shared
+# workflow of saengine-index: SAEngine's validator plus the repository checks.
+name: Validate packages
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    uses: The-Studio-of-Sadiq/saengine-index/.github/workflows/validate-packages.yml@main
+    with:
+      kind: structureTemplate

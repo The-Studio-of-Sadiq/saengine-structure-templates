@@ -1,0 +1,9 @@
+# Reviewers. With "Require review from Code Owners" on main, a pull request is merged only after
+# a code owner of every file it changes approved it.
+# A package with Python hooks (code that runs inside SAEngine) must have its own line here
+# naming its reviewers: the CI refuses it otherwise.
+*                        @princekhan7748
+# Read-only mirrors of SAEngine's built-in packages (change them in SAEngine, then mirror).
+/saengine-shapes/              @princekhan7748
+/mirrors.json            @princekhan7748
+/.github/                @princekhan7748
